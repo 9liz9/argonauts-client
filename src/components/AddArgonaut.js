@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import './AddArgonauts.css'
  
-const API_URL = "http://localhost:5005";
  
 function AddArgonaut(props) {
   const [name, setName] = useState("");
@@ -12,7 +11,7 @@ function AddArgonaut(props) {
  
     const requestBody = { name };
     axios
-      .post(`${API_URL}/api/list`, requestBody)
+      .post(`${process.env.REACT_APP_API_URL}/api/list`, requestBody)
       .then((response) => {
         // Reset the state
         setName("");

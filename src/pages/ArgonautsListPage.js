@@ -3,7 +3,7 @@ import axios from "axios";
 import AddArgonaut from "../components/AddArgonaut";
 import './ArgonautsListPage.css';
 
-const API_URL = "http://localhost:5005";
+
  
  
 function ArgonautsListPage() {
@@ -11,7 +11,7 @@ function ArgonautsListPage() {
  
   const getAllArgonauts = () => {
     axios
-      .get(`${API_URL}/api/list`)
+      .get(`${process.env.REACT_APP_API_URL}/api/list`)
       .then((response) => setArgonauts(response.data))
       .catch((error) => console.log(error));
   };
